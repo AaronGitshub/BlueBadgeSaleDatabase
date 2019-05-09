@@ -55,9 +55,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CompanyCreate.cs" />
     <Compile Include="SaleCreate.cs" />
+    <Compile Include="CompanyDetail.cs" />
     <Compile Include="SaleDetail.cs" />
+    <Compile Include="CompanyEdit.cs" />
     <Compile Include="SaleEdit.cs" />
+    <Compile Include="CompanyListItem.cs" />
     <Compile Include="SaleListItem.cs" />
   </ItemGroup>
   <ItemGroup>

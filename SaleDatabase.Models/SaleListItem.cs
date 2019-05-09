@@ -9,7 +9,6 @@ namespace SaleDatabase.Models
 {
     public class SaleListItem
     {
-        //Maybe remove this saleID?
         [Display(Name = "Sale ID")]
         public int SaleID { get; set; }
         public string Address { get; set; }

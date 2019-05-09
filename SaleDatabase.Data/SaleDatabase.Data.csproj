@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Company.cs" />
     <Compile Include="Migrations\201905061920429_InitialCreate.cs" />
     <Compile Include="Migrations\201905061920429_InitialCreate.Designer.cs">
       <DependentUpon>201905061920429_InitialCreate.cs</DependentUpon>
@@ -65,6 +66,14 @@
     <Compile Include="Migrations\201905071855285_RemovedRequired.cs" />
     <Compile Include="Migrations\201905071855285_RemovedRequired.Designer.cs">
       <DependentUpon>201905071855285_RemovedRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905082008536_AddedCompanyPropToSale.cs" />
+    <Compile Include="Migrations\201905082008536_AddedCompanyPropToSale.Designer.cs">
+      <DependentUpon>201905082008536_AddedCompanyPropToSale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905091955303_companyfinished.cs" />
+    <Compile Include="Migrations\201905091955303_companyfinished.Designer.cs">
+      <DependentUpon>201905091955303_companyfinished.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -84,6 +93,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905071855285_RemovedRequired.resx">
       <DependentUpon>201905071855285_RemovedRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905082008536_AddedCompanyPropToSale.resx">
+      <DependentUpon>201905082008536_AddedCompanyPropToSale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905091955303_companyfinished.resx">
+      <DependentUpon>201905091955303_companyfinished.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

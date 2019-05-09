@@ -37,7 +37,7 @@ namespace SaleDatabase.Data
 
         public DateTimeOffset? ModifiedUtc { get; set; }
 
-        //virtual CompanyID { get; set; }
+        public virtual Company Company {get; set; }
 
 }
 }

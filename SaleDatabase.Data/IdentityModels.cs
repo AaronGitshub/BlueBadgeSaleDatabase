@@ -32,6 +32,7 @@ namespace SaleDatabase.Data
             return new ApplicationDbContext();
         }
         public DbSet<Sale> Sales { get; set; }
+        public DbSet<Company> Companies { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
@@ -57,4 +58,5 @@ namespace SaleDatabase.Data
         {
             HasKey(iur => iur.UserId);
         }
-    }}
+    }
+}
