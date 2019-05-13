@@ -21,6 +21,7 @@ namespace SaleDatabaseMVC.Controllers
 
         public AccountController()
         {
+            //not sure I need this.
             var context = new ApplicationDbContext();
         }
 
@@ -135,7 +136,6 @@ namespace SaleDatabaseMVC.Controllers
                     return View(model);
             }
         }
-
         //
         // GET: /Account/Register
         [AllowAnonymous]
@@ -154,7 +154,12 @@ namespace SaleDatabaseMVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser()
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    CompanyID = model.CompanyID
+                };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -370,7 +375,13 @@ namespace SaleDatabaseMVC.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    //CompanyID = model.Email
+                   //Company Company = model.Email
+                };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

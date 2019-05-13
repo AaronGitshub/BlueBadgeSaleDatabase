@@ -19,10 +19,10 @@
     </div>
     //company dropdown here
     <div class="form-group">
-        @Html.LabelFor(model => model.Company.CompanyID, "Company ID", htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.CompanyID, "Company ID", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.DropDownList("CompanyID", (SelectList)ViewBag.CompanyID, " ")
-            @Html.ValidationMessageFor(model => model.Company.CompanyID, "", new { @class = "text-danger" })
+            @Html.ValidationMessageFor(m => m.CompanyID, "", new { @class = "text-danger" })
         </div>
     </div>
     //company dropdown above

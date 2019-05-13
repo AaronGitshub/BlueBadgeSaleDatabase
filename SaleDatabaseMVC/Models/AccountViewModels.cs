@@ -81,7 +81,8 @@ namespace SaleDatabaseMVC.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
-        public Company Company { get; set; }
+        //public Company Company { get; set; }
+        public int CompanyID { get; set; }
     }
 
     public class ResetPasswordViewModel
