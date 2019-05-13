@@ -12,9 +12,10 @@ namespace SaleDatabase.Data
         [Key]
         public int CompanyID { get; set; }
         [Required]
+        [Display(Name = "Company Name")]
         public string CompanyName { get; set; }
         [Required]
+        [Display(Name = "Company Location")]
         public string CompanyLocation { get; set;}
-
     }
 }

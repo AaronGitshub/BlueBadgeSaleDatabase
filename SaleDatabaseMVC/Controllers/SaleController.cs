@@ -23,15 +23,23 @@ namespace SaleDatabaseMVC.Controllers
         //GET
         public ActionResult Create()
         {
+            var service = new CompanyService();
+
+            ViewBag.CompanyID = new SelectList(service.GetCompanies(), "CompanyID", "CompanyName");
+
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(SaleCreate model)
         {
+            var service = CreateSaleService();
+            var companyService = new CompanyService();
+
+            ViewBag.CompanyID = new SelectList(companyService.GetCompanies(), "CompanyID", "CompanyName");
+
             if (!ModelState.IsValid) return View(model);
 
-            var service = CreateSaleService();
 
             if (service.CreateSale(model))
             {
@@ -40,6 +48,7 @@ namespace SaleDatabaseMVC.Controllers
             };
             ModelState.AddModelError("", "Sale could not be created.");
             return View(model);
+
         }
         public ActionResult Details(int id)
         {
@@ -52,6 +61,11 @@ namespace SaleDatabaseMVC.Controllers
         {
             if (id == null)
                 return RedirectToAction("Index");
+
+            var companyservice = new CompanyService();
+
+            //Need to limit to CompanyID of the User.
+            ViewBag.CompanyID = new SelectList(companyservice.GetCompanies(), "CompanyID", "CompanyName");
 
             var service = CreateSaleService();
             var detail = service.GetSaleById(id.Value);
@@ -69,7 +83,9 @@ namespace SaleDatabaseMVC.Controllers
         public ActionResult Edit(int id, SaleEdit model)
         {
             if (!ModelState.IsValid) return View(model);
+            var companyservice = new CompanyService();
 
+            ViewBag.CompanyID = new SelectList(companyservice.GetCompanies(), "CompanyID", "CompanyName");
             if (model.SaleID != id)
             {
                 ModelState.AddModelError("", "Id Mismatch");

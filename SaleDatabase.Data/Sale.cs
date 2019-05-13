@@ -11,9 +11,8 @@ namespace SaleDatabase.Data
     {
         [Key]
         public int SaleID { get; set; }
-        
         public Guid OwnerID { get; set; }
-        
+
         [Display(Name = "Sale Type")]
         public string SaleType { get; set; }
         [Required]
@@ -22,22 +21,26 @@ namespace SaleDatabase.Data
         [Required]
         [Display(Name = "Sale Price")]
         public decimal SalePrice { get; set; }
-        
+        [Display(Name = "Land Size")]
         public decimal LandSize { get; set; }
-        
+        [Display(Name = "Sq. Ft.")]
         public int SquareFootage { get; set; }
-        
+        [Display(Name = "Buyer 1")]
         public string Buyer1 { get; set; }
+        [Display(Name = "Buyer 2")]
         public string Buyer2 { get; set; }
-        
+        [Display(Name = "Seller 1")]
         public string Seller1 { get; set; }
+        [Display(Name = "Seller 2")]
         public string Seller2 { get; set; }
-        
+        [Display(Name = "Created (UTC)")]
         public DateTimeOffset CreatedUtc { get; set; }
-
+        [Display(Name = "Modified (UTC)")]
         public DateTimeOffset? ModifiedUtc { get; set; }
 
-        public virtual Company Company {get; set; }
+        public virtual Company Company { get; set; }
 
-}
+        public int CompanyID { get; set; }
+
+    }
 }

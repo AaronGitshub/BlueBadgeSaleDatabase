@@ -18,9 +18,12 @@ namespace SaleDatabaseMVC.Controllers
 
             return View(model);
         }
+
         //GET
         public ActionResult Create()
         {
+
+
             return View();
         }
         [HttpPost]
@@ -117,6 +120,10 @@ namespace SaleDatabaseMVC.Controllers
             var service = new CompanyService();
             return service;
         }
-
+        //private SaleService CreateSaleService()
+        //{
+        //    var service = new SaleService();
+        //    return service;
+        //}
     }
 }

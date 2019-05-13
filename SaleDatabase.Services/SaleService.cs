@@ -24,6 +24,7 @@ namespace SaleDatabase.Services
                     OwnerID = _userId,
                     Address = model.Address,
                     SalePrice = model.SalePrice,
+                    CompanyID = model.CompanyID,
                     CreatedUtc = DateTimeOffset.Now
                 };
 
@@ -32,6 +33,9 @@ namespace SaleDatabase.Services
                 ctx.Sales.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
+
+
+
         }
         public IEnumerable<SaleListItem> GetSales()
         {
@@ -48,12 +52,16 @@ namespace SaleDatabase.Services
                                     SaleID = e.SaleID,
                                     Address = e.Address,
                                     SalePrice = e.SalePrice,
-                                    CreatedUtc = e.CreatedUtc
+                                    CompanyID = e.CompanyID,
+                                    Company = e.Company,
+                                    CreatedUtc = e.CreatedUtc,
                                 }
                         );
 
                 return query.ToArray();
             }
+
+
         }
         public SaleDetail GetSaleById(int saleId)
         {
@@ -69,11 +77,60 @@ namespace SaleDatabase.Services
                         SaleID = entity.SaleID,
                         Address = entity.Address,
                         SalePrice = entity.SalePrice,
+                        CompanyID = entity.CompanyID,
+                        //CompanyName = entity.CompanyName,
                         CreatedUtc = entity.CreatedUtc,
                         ModifiedUtc = entity.ModifiedUtc
                     };
             }
         }
+
+        //Cody's Sample below
+        // public List<MeetSelect> GetMeetSelectList()
+        //{
+        //    using (var ctx = new ApplicationDbContext())
+        //    {
+        //        List<MeetSelect> meetSelectItems = new List<MeetSelect>();
+        // List<Meet> listOfMeets = ctx.Meets.ToList();
+
+        //        foreach (Meet meet in listOfMeets)
+        //        {
+        //            MeetSelect newSelectItem = new MeetSelect
+        //            {
+        //                MeetID = meet.MeetID,
+        //                LocationOfMeet = meet.LocationOfMeet
+        //            };
+        // meetSelectItems.Add(newSelectItem);
+        //        }
+        //        return meetSelectItems;
+        //    }
+        //}
+
+        /// <summary>
+        /// add the list service for the dropdown below.
+        /// </summary>
+        /// 
+        //public List<CompanySelect> GetCompanySelectList()
+        //{
+        //    using (var ctx = new ApplicationDbContext())
+        //    {
+
+        //        List <CompanySelect> companyNameSelectItems = new List<CompanySelect>();
+        //        List<Company> listOfNames = ctx.Companies.ToList();
+
+        //        foreach (Company meet in listOfNames)
+        //        {
+        //            CompanySelect newSelectItem = new CompanySelect
+        //            {
+        //                CompanyID = meet.CompanyID,
+        //                CompanyName = meet.CompanyName
+        //            };
+        //            companyNameSelectItems.Add(newSelectItem);
+        //        }
+        //        return companyNameSelectItems;
+        //    }
+        //}
+
         public bool UpdateSale(SaleEdit model)
         {
             using (var ctx = new ApplicationDbContext())
@@ -84,6 +141,7 @@ namespace SaleDatabase.Services
                         .Single(e => e.SaleID == model.SaleID && e.OwnerID == _userId);
                 entity.Address = model.Address;
                 entity.SalePrice = model.SalePrice;
+                entity.CompanyID = model.CompanyID;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
 
                 return ctx.SaveChanges() == 1;

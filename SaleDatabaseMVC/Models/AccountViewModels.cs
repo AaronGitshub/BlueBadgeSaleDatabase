@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using SaleDatabase.Data;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace SaleDatabaseMVC.Models
@@ -79,6 +80,8 @@ namespace SaleDatabaseMVC.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        public Company Company { get; set; }
     }
 
     public class ResetPasswordViewModel

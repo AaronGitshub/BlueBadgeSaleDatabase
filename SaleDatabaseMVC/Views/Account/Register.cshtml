@@ -17,6 +17,23 @@
             @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
         </div>
     </div>
+    //company dropdown here
+    @*<div class="form-group">
+            @Html.LabelFor(m => m.Company.CompanyID, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            </div>
+        </div>*@
+@*@ var CompanyID = (new CompanyService().GetCompanies("CompanyID" "CompanyName"));
+    <div class="form-group">
+        @Html.LabelFor(model => model.Company.CompanyID, "Company ID", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("CompanyID", (SelectList)CompanyID, " ")
+            @Html.ValidationMessageFor(model => model.Company.CompanyID, "", new { @class = "text-danger" })
+        </div>
+    </div>*@
+    //company dropdown above
+
     <div class="form-group">
         @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
