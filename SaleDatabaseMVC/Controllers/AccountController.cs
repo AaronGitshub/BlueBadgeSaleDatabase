@@ -21,8 +21,6 @@ namespace SaleDatabaseMVC.Controllers
 
         public AccountController()
         {
-            //not sure I need this.
-            var context = new ApplicationDbContext();
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
@@ -379,8 +377,6 @@ namespace SaleDatabaseMVC.Controllers
                 {
                     UserName = model.Email,
                     Email = model.Email,
-                    //CompanyID = model.Email
-                   //Company Company = model.Email
                 };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)

@@ -1,4 +1,5 @@
-﻿using SaleDatabase.Data;
+﻿using Microsoft.AspNet.Identity;
+using SaleDatabase.Data;
 using SaleDatabase.Models;
 using System;
 using System.Collections.Generic;
@@ -78,12 +79,34 @@ namespace SaleDatabase.Services
                         Address = entity.Address,
                         SalePrice = entity.SalePrice,
                         CompanyID = entity.CompanyID,
-                        //CompanyName = entity.CompanyName,
                         CreatedUtc = entity.CreatedUtc,
                         ModifiedUtc = entity.ModifiedUtc
                     };
             }
         }
+        public List<Company> GetUserCompanyList()
+        {
+            var ctx = new ApplicationDbContext();
+            var companyService = new CompanyService();
+            var companylist = companyService.GetCompanyList();
+            var user = ctx.Users.FirstOrDefault(u => u.Id == _userId.ToString());
+            List<Company> returnlist = new List<Company>();
+            foreach (Company company in companylist)
+            {
+                if (company.CompanyID == user.CompanyID)
+                {
+                    returnlist.Add(company);
+                }
+            }
+            return returnlist;
+
+        }
+
+
+
+
+
+
 
         //Cody's Sample below
         // public List<MeetSelect> GetMeetSelectList()
@@ -106,30 +129,7 @@ namespace SaleDatabase.Services
         //    }
         //}
 
-        /// <summary>
-        /// add the list service for the dropdown below.
-        /// </summary>
-        /// 
-        //public List<CompanySelect> GetCompanySelectList()
-        //{
-        //    using (var ctx = new ApplicationDbContext())
-        //    {
 
-        //        List <CompanySelect> companyNameSelectItems = new List<CompanySelect>();
-        //        List<Company> listOfNames = ctx.Companies.ToList();
-
-        //        foreach (Company meet in listOfNames)
-        //        {
-        //            CompanySelect newSelectItem = new CompanySelect
-        //            {
-        //                CompanyID = meet.CompanyID,
-        //                CompanyName = meet.CompanyName
-        //            };
-        //            companyNameSelectItems.Add(newSelectItem);
-        //        }
-        //        return companyNameSelectItems;
-        //    }
-        //}
 
         public bool UpdateSale(SaleEdit model)
         {

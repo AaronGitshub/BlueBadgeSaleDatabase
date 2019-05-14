@@ -23,9 +23,10 @@ namespace SaleDatabaseMVC.Controllers
         //GET
         public ActionResult Create()
         {
-            var service = new CompanyService();
+            var service = CreateSaleService();
+            //Need to limit to CompanyID of the User.
 
-            ViewBag.CompanyID = new SelectList(service.GetCompanies(), "CompanyID", "CompanyName");
+            ViewBag.CompanyID = new SelectList(service.GetUserCompanyList(), "CompanyID", "CompanyName");
 
             return View();
         }
@@ -36,7 +37,10 @@ namespace SaleDatabaseMVC.Controllers
             var service = CreateSaleService();
             var companyService = new CompanyService();
 
-            ViewBag.CompanyID = new SelectList(companyService.GetCompanies(), "CompanyID", "CompanyName");
+            //Need to limit to CompanyID of the User.
+            ViewBag.CompanyID = new SelectList(service.GetUserCompanyList(), "CompanyID", "CompanyName");
+
+
 
             if (!ModelState.IsValid) return View(model);
 
@@ -64,7 +68,7 @@ namespace SaleDatabaseMVC.Controllers
 
             var companyservice = new CompanyService();
 
-            //Need to limit to CompanyID of the User.
+
             ViewBag.CompanyID = new SelectList(companyservice.GetCompanies(), "CompanyID", "CompanyName");
 
             var service = CreateSaleService();

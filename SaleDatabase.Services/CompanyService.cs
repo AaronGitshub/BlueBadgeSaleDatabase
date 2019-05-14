@@ -95,7 +95,13 @@ namespace SaleDatabase.Services
         }
 
 
-
+        public List<Company> GetCompanyList()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                return ctx.Companies.ToList();
+            }
+        }
 
     }
 }
