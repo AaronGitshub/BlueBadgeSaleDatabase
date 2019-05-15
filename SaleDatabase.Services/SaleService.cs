@@ -102,35 +102,6 @@ namespace SaleDatabase.Services
 
         }
 
-
-
-
-
-
-
-        //Cody's Sample below
-        // public List<MeetSelect> GetMeetSelectList()
-        //{
-        //    using (var ctx = new ApplicationDbContext())
-        //    {
-        //        List<MeetSelect> meetSelectItems = new List<MeetSelect>();
-        // List<Meet> listOfMeets = ctx.Meets.ToList();
-
-        //        foreach (Meet meet in listOfMeets)
-        //        {
-        //            MeetSelect newSelectItem = new MeetSelect
-        //            {
-        //                MeetID = meet.MeetID,
-        //                LocationOfMeet = meet.LocationOfMeet
-        //            };
-        // meetSelectItems.Add(newSelectItem);
-        //        }
-        //        return meetSelectItems;
-        //    }
-        //}
-
-
-
         public bool UpdateSale(SaleEdit model)
         {
             using (var ctx = new ApplicationDbContext())
