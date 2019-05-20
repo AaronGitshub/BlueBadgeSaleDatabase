@@ -1,6 +1,53 @@
-﻿body {
+﻿
+
+img.bg {
+    /*background-image: url('../assets/BackgroundNightSky.jpg');*/
+    z-index: -1;
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+/*@media screen and (max-width: 1024px) {
+    img.bg {
+        left: 50%;
+        margin-left: -512px;
+    }
+}*/
+.mainlink {
+    border-radius: 10px;
+    border: none;
+    color: lightgrey;
+    background-color: rgba(119, 120, 204, 0.20);
+    text-align: left;
+    font-size: 28px;
+    font-family: fantasy;
+    padding: 16px;
+    width: 330px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 20px;
+    text-shadow: 2px 2px #000000;
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    text-decoration-line: none;
+    text-decoration: none;
+    text-decoration-style: none;
+}
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +68,8 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.logoff {
+    display: none;
 }

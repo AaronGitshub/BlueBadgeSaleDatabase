@@ -15,6 +15,8 @@ namespace SaleDatabase.Models
         public string Address { get; set; }
         [Display(Name = "Sale Price")]
         public decimal SalePrice { get; set; }
+        [Display(Name = "Price Per SF")]
+        public decimal PricePerSF { get; set; }
         [Display(Name = "Company ID")]
         public int CompanyID { get; set; }
         public Company Company { get; set; }

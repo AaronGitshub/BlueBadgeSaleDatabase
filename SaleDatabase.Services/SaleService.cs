@@ -134,5 +134,13 @@ namespace SaleDatabase.Services
             }
         }
 
+        public decimal CalcPricePSF(decimal SalePrice, int SquareFootage)
+        {
+            decimal pricePerSF = SalePrice / SquareFootage;
+
+            return pricePerSF;
+        }
+
+
     }
 }
