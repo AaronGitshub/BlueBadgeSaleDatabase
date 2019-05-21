@@ -18,6 +18,9 @@ img.bg {
         margin-left: -512px;
     }
 }*/
+.loginnamelink{
+    margin-left: 25px;
+}
 .mainlink {
     border-radius: 10px;
     border: none;
@@ -27,7 +30,7 @@ img.bg {
     font-size: 28px;
     font-family: fantasy;
     padding: 16px;
-    width: 330px;
+    width: 300px;
     transition: all 0.5s;
     cursor: pointer;
     margin: 20px;

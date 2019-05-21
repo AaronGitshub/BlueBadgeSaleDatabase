@@ -25,6 +25,14 @@ namespace SaleDatabase.Data
         public decimal LandSize { get; set; }
         [Display(Name = "Sq. Ft.")]
         public int SquareFootage { get; set; }
+        [Display(Name = "Price Per SF")]
+        public decimal PricePerSF
+        {
+            get
+            {
+                return SalePrice / SquareFootage;
+            }
+        }
         [Display(Name = "Buyer 1")]
         public string Buyer1 { get; set; }
         [Display(Name = "Buyer 2")]

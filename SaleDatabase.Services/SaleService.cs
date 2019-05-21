@@ -25,6 +25,8 @@ namespace SaleDatabase.Services
                     OwnerID = _userId,
                     Address = model.Address,
                     SalePrice = model.SalePrice,
+                    SquareFootage = model.SquareFootage,
+                    //PricePerSF = model.PricePerSF,
                     CompanyID = model.CompanyID,
                     CreatedUtc = DateTimeOffset.Now
                 };
@@ -53,6 +55,7 @@ namespace SaleDatabase.Services
                                     SaleID = e.SaleID,
                                     Address = e.Address,
                                     SalePrice = e.SalePrice,
+                                    SquareFootage = e.SquareFootage,
                                     CompanyID = e.CompanyID,
                                     Company = e.Company,
                                     CreatedUtc = e.CreatedUtc,
@@ -78,6 +81,8 @@ namespace SaleDatabase.Services
                         SaleID = entity.SaleID,
                         Address = entity.Address,
                         SalePrice = entity.SalePrice,
+                        SquareFootage = entity.SquareFootage,
+                        PricePerSF = entity.PricePerSF,
                         CompanyID = entity.CompanyID,
                         CreatedUtc = entity.CreatedUtc,
                         ModifiedUtc = entity.ModifiedUtc
@@ -112,6 +117,8 @@ namespace SaleDatabase.Services
                         .Single(e => e.SaleID == model.SaleID && e.OwnerID == _userId);
                 entity.Address = model.Address;
                 entity.SalePrice = model.SalePrice;
+                entity.SquareFootage = model.SquareFootage;
+                //entity.PricePerSF = model.PricePerSF;
                 entity.CompanyID = model.CompanyID;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
 

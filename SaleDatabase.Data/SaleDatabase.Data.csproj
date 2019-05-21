@@ -55,6 +55,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Company.cs" />
+    <Compile Include="Migrations\201905131424333_InitialCreate.cs" />
+    <Compile Include="Migrations\201905131424333_InitialCreate.Designer.cs">
+      <DependentUpon>201905131424333_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905211333192_addedpriceperSF.cs" />
+    <Compile Include="Migrations\201905211333192_addedpriceperSF.Designer.cs">
+      <DependentUpon>201905211333192_addedpriceperSF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905211406475_ChangedPricePSFinData.cs" />
+    <Compile Include="Migrations\201905211406475_ChangedPricePSFinData.Designer.cs">
+      <DependentUpon>201905211406475_ChangedPricePSFinData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Sale.cs" />
@@ -62,6 +75,17 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201905131424333_InitialCreate.resx">
+      <DependentUpon>201905131424333_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905211333192_addedpriceperSF.resx">
+      <DependentUpon>201905211333192_addedpriceperSF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905211406475_ChangedPricePSFinData.resx">
+      <DependentUpon>201905211406475_ChangedPricePSFinData.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -13,10 +13,14 @@ namespace SaleDatabase.Models
         public int SaleID { get; set; }
         [Display(Name = "Address")]
         public string Address { get; set; }
-        [Display(Name = "Company ID")]
-        public int CompanyID { get; set; }
-
         [Display(Name = "Sale Price")]
         public decimal SalePrice { get; set; }
+        [Display(Name = "Square Footage")]
+        public int SquareFootage { get; set; }
+        public decimal PricePerSF { get; }
+
+        [Display(Name = "Company ID")]
+        public int CompanyID { get; set; }
+        
     }
 }

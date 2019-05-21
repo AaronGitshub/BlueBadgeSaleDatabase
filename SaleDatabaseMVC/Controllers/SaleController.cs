@@ -35,11 +35,11 @@ namespace SaleDatabaseMVC.Controllers
         public ActionResult Create(SaleCreate model)
         {
             var service = CreateSaleService();
-            var companyService = new CompanyService();
+            //var companyService = new CompanyService();
 
             //Need to limit to CompanyID of the User.
             ViewBag.CompanyID = new SelectList(service.GetUserCompanyList(), "CompanyID", "CompanyName");
-
+            
 
 
             if (!ModelState.IsValid) return View(model);
@@ -78,13 +78,17 @@ namespace SaleDatabaseMVC.Controllers
                 {
                     SaleID = detail.SaleID,
                     Address = detail.Address,
-                    SalePrice = detail.SalePrice
+                    SalePrice = detail.SalePrice,
+                    SquareFootage = detail.SquareFootage,
+                    //PricePerSF = detail.PricePerSF
                 };
             return View(model);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, SaleEdit model)
+        public ActionResult Edit
+
+            (int id, SaleEdit model)
         {
             if (!ModelState.IsValid) return View(model);
             var companyservice = new CompanyService();

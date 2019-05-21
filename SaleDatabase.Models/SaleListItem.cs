@@ -9,14 +9,28 @@ using System.Threading.Tasks;
 namespace SaleDatabase.Models
 {
     public class SaleListItem
-    {
+    { //private decimal _pricePer;
+
         [Display(Name = "Sale ID")]
         public int SaleID { get; set; }
         public string Address { get; set; }
         [Display(Name = "Sale Price")]
         public decimal SalePrice { get; set; }
+        [Display(Name = "Square Footage")]
+        public int SquareFootage { get; set; }
         [Display(Name = "Price Per SF")]
         public decimal PricePerSF { get; set; }
+
+        //public decimal PricePerSF
+        //{
+        //    get
+        //    {
+        //        return _pricePer;
+        //    }
+        //   set { _pricePer = value; }
+
+
+        //}
         [Display(Name = "Company ID")]
         public int CompanyID { get; set; }
         public Company Company { get; set; }
