@@ -19,7 +19,7 @@ img.bg {
     }
 }*/
 .loginnamelink{
-    margin-left: 25px;
+    margin-left: 15px;
 }
 .mainlink {
     border-radius: 10px;
@@ -58,7 +58,7 @@ body {
     padding-left: 15px;
     padding-right: 15px;
 }
-
+http://localhost:50197/assets/BackgroundNightSky.jpg
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */

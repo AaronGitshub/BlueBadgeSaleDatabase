@@ -25,7 +25,7 @@
                     @Html.ActionLink("Sales", "Index", "Sale", new { area = "" }, new { @class = "mainlink" })
                     @Html.ActionLink("Companies", "Index", "Company", new { area = "" }, new { @class = "mainlink" })
                     <br />
-                    @Html.Partial("_LoginPartial2", new { @class = "mainlink" })
+                    @*@Html.Partial("_LoginPartial2", new { @class = "mainlink" })*@
                     @*@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "mainlink" })*@
                 }
                 @if (!User.Identity.IsAuthenticated)
