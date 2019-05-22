@@ -13,6 +13,11 @@ using SaleDatabaseMVC.Models;
 
 namespace SaleDatabaseMVC.Controllers
 {
+    //adding SSL to an app
+     #if !DEBUG
+     [RequireHttps]
+
+    #endif
     [Authorize]
     public class AccountController : Controller
     {
