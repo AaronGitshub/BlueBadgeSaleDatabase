@@ -14,19 +14,17 @@
 </head>
 <body>
 
-    <div class="container col-md-4  col-md-offset-0">
+    <div class="container col-md-3  col-md-offset-0">
         <div class="row">
             <div class="col-sm">
 
                 @if (User.Identity.IsAuthenticated)
                 {
-                    @Html.Partial("_LoginPartial1", new { @class = "mainlink" })
+                    @Html.Partial("_LoginPartial", new { @class = "mainlink" })
                     <br />
                     @Html.ActionLink("Sales", "Index", "Sale", new { area = "" }, new { @class = "mainlink" })
                     @Html.ActionLink("Companies", "Index", "Company", new { area = "" }, new { @class = "mainlink" })
-                    <br />
-                    @*@Html.Partial("_LoginPartial2", new { @class = "mainlink" })*@
-                    @*@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "mainlink" })*@
+               
                 }
                 @if (!User.Identity.IsAuthenticated)
                 {
@@ -38,6 +36,28 @@
             </div>
         </div>
     </div>
+
+    <div class="container col-sm-push-10" style="margin-right: 40px;">
+        <br />
+        @RenderBody()
+
+    </div>
+
+    @*Background Image*@
+    <div class="container-fluid">
+        <img src="~/assets/BackgroundNightSky.jpg" class="bg" />
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+        <footer class="footer"></footer>
+    @*<p>&copy; @DateTime.Now.Year - Indiana Sales Database</p>*@
+</body>
+</html>
+
+
 
 
     @*<div class="navbar navbar-inverse navbar-fixed-top">
@@ -61,23 +81,3 @@
                 </div>
             </div>
         </div>*@
-
-    <div class="container col-sm-push-8" style="margin-right: 40px;">
-        <br />
-        @RenderBody()
-
-        <footer class="footer"></footer>
-    </div>
-
-    @*Background Image*@
-    <div class="container-fluid">
-        <img src="~/assets/BackgroundNightSky.jpg" class="bg" />
-    </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
-
-    @*<p>&copy; @DateTime.Now.Year - Indiana Sales Database</p>*@
-</body>
-</html>
