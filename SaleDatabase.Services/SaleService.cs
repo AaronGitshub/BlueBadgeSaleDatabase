@@ -47,7 +47,7 @@ namespace SaleDatabase.Services
                 var query =
                     ctx
                         .Sales
-                        .Where(e => e.OwnerID == _userId)
+                        .Where(e => e.OwnerID == _userId || e.CompanyID == 1)
                         .Select(
                             e =>
                                 new SaleListItem
@@ -56,11 +56,17 @@ namespace SaleDatabase.Services
                                     Address = e.Address,
                                     SalePrice = e.SalePrice,
                                     SquareFootage = e.SquareFootage,
+                                    //PricePerSF = e.PricePerSF,
                                     CompanyID = e.CompanyID,
                                     Company = e.Company,
                                     CreatedUtc = e.CreatedUtc,
                                 }
-                        );
+                        ).ToArray();
+                foreach(var sale in query)
+                {
+                    sale.PricePerSF = sale.SalePrice / sale.SquareFootage;
+                }
+
 
                 return query.ToArray();
             }
@@ -74,7 +80,7 @@ namespace SaleDatabase.Services
                 var entity =
                     ctx
                         .Sales
-                        .Single(e => e.SaleID == saleId && e.OwnerID == _userId);
+                        .SingleOrDefault(e => e.SaleID == saleId && (e.OwnerID == _userId || e.CompanyID == 1));
                 return
                     new SaleDetail
                     {
@@ -114,7 +120,7 @@ namespace SaleDatabase.Services
                 var entity =
                     ctx
                         .Sales
-                        .Single(e => e.SaleID == model.SaleID && e.OwnerID == _userId);
+                        .Single(e => e.SaleID == model.SaleID && (e.OwnerID == _userId || e.CompanyID == 1));
                 entity.Address = model.Address;
                 entity.SalePrice = model.SalePrice;
                 entity.SquareFootage = model.SquareFootage;
@@ -133,7 +139,7 @@ namespace SaleDatabase.Services
                 var entity =
                     ctx
                         .Sales
-                        .Single(e => e.SaleID == SaleID && e.OwnerID == _userId);
+                        .Single(e => e.SaleID == SaleID && (e.OwnerID == _userId || e.CompanyID == 1));
 
                 ctx.Sales.Remove(entity);
 
