@@ -2,9 +2,6 @@
 using SaleDatabase.Models;
 using SaleDatabase.Services;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace SaleDatabaseMVC.Controllers
@@ -39,7 +36,7 @@ namespace SaleDatabaseMVC.Controllers
 
             //Need to limit to CompanyID of the User.
             ViewBag.CompanyID = new SelectList(service.GetUserCompanyList(), "CompanyID", "CompanyName");
-            
+
 
 
             if (!ModelState.IsValid) return View(model);
