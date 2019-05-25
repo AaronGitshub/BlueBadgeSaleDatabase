@@ -15,6 +15,7 @@ namespace SaleDatabase.Models
         public string Address { get; set; }
         [Display(Name = "Sale Price")]
         public decimal SalePrice { get; set; }
+        [Display(Name = "Sq. Ft.")]
         public int SquareFootage { get; set; }
         public decimal PricePerSF { get; set; }
         //public decimal PricePerSF
@@ -25,7 +26,10 @@ namespace SaleDatabase.Models
         //    }
 
         //}
-
+        [Display(Name = "Buyer")]
+        public string Buyer1 { get; set; }
+        [Display(Name = "Seller")]
+        public string Seller1 { get; set; }
         [Display(Name = "Company ID")]
         public int CompanyID { get; set; }
         [Display(Name = "Created (UTC)")]

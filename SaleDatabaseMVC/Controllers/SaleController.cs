@@ -5,6 +5,7 @@ using System;
 using System.Web.Mvc;
 
 namespace SaleDatabaseMVC.Controllers
+
 {
     [Authorize]
     public class SaleController : Controller
@@ -77,7 +78,8 @@ namespace SaleDatabaseMVC.Controllers
                     Address = detail.Address,
                     SalePrice = detail.SalePrice,
                     SquareFootage = detail.SquareFootage,
-                    //PricePerSF = detail.PricePerSF
+                    Buyer1 = detail.Buyer1,
+                    Seller1 = detail.Seller1,
                 };
             return View(model);
         }

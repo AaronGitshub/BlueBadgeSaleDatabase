@@ -26,7 +26,8 @@ namespace SaleDatabase.Services
                     Address = model.Address,
                     SalePrice = model.SalePrice,
                     SquareFootage = model.SquareFootage,
-                    //PricePerSF = model.PricePerSF,
+                    Buyer1 = model.Buyer1,
+                    Seller1 = model.Seller1,
                     CompanyID = model.CompanyID,
                     CreatedUtc = DateTimeOffset.Now
                 };
@@ -56,13 +57,14 @@ namespace SaleDatabase.Services
                                     Address = e.Address,
                                     SalePrice = e.SalePrice,
                                     SquareFootage = e.SquareFootage,
-                                    //PricePerSF = e.PricePerSF,
+                                    Buyer1 = e.Buyer1,
+                                    Seller1 = e.Seller1,
                                     CompanyID = e.CompanyID,
                                     Company = e.Company,
                                     CreatedUtc = e.CreatedUtc,
                                 }
                         ).ToArray();
-                foreach(var sale in query)
+                foreach (var sale in query)
                 {
                     sale.PricePerSF = sale.SalePrice / sale.SquareFootage;
                 }
@@ -89,6 +91,8 @@ namespace SaleDatabase.Services
                         SalePrice = entity.SalePrice,
                         SquareFootage = entity.SquareFootage,
                         PricePerSF = entity.PricePerSF,
+                        Buyer1 = entity.Buyer1,
+                        Seller1 = entity.Seller1,
                         CompanyID = entity.CompanyID,
                         CreatedUtc = entity.CreatedUtc,
                         ModifiedUtc = entity.ModifiedUtc
@@ -124,7 +128,8 @@ namespace SaleDatabase.Services
                 entity.Address = model.Address;
                 entity.SalePrice = model.SalePrice;
                 entity.SquareFootage = model.SquareFootage;
-                //entity.PricePerSF = model.PricePerSF;
+                entity.Buyer1 = model.Buyer1;
+                entity.Seller1 = model.Seller1;
                 entity.CompanyID = model.CompanyID;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
 
