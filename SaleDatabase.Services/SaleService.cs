@@ -38,8 +38,6 @@ namespace SaleDatabase.Services
                 return ctx.SaveChanges() == 1;
             }
 
-
-
         }
         public IEnumerable<SaleListItem> GetSales()
         {

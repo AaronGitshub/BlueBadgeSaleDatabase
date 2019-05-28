@@ -3,11 +3,18 @@ README
 This is the second major project, known as 'Blue Badge' that I did during the 12-week C#/.NET coding bootcamp that I began in April 2019.
 
 This project is intended to allow users to store, retrieve, edit, and delete real estate sales in a database. 
-The users associate themselves with a company at the time of 
+The users associate themselves with a company at the time of registration
 
 
-Resources:
+**Resources:**
 
+**Instructor Help**
+Lawrence Wagner - https://github.com/lwagn007
+Ransford Walker - https://github.com/ransfordw
+Joshua Tucker - https://github.com/jtux
+Luke Titus - https://github.com/lukedtitus
+
+**Helpfull links**
 How to do a file compare in Visual Studio
 https://www.meziantou.net/2018/03/12/comparing-files-using-visual-studio
 
